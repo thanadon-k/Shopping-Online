@@ -1,0 +1,168 @@
+.placeorder {
+    margin: 0;
+    padding: 20px 70px;
+
+    .order {
+        display: flex;
+        gap: 40px;
+
+        .detail {
+            flex: 70%;
+
+            .title {
+                margin: 0;
+                padding: 15px 0;
+                font-size: 20px;
+                font-weight: 500;
+                border-bottom: 1px solid black;
+            }
+
+            .meta {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 10px;
+                border-bottom: 1px solid black;
+
+                p {
+                    font-size: 12px;
+                    color: #424242;
+                }
+
+                .price {
+                    width: 395px;
+                    display: flex;
+                    justify-content: space-between;
+
+                    p {
+                        width: 100px;
+                    }
+                }
+            }
+        }
+
+        .discount-summary {
+            flex: 20%;
+
+            .summary {
+                border-bottom: 1px solid black;
+
+                .title {
+                    margin: 0 0 10px 0;
+                    padding: 15px 0;
+                    font-size: 20px;
+                    font-weight: 500;
+                    border-bottom: 1px solid black;
+                }
+
+                .price {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: end;
+
+                    .label {
+                        margin: 7px 0;
+                        font-size: 14px;
+                    }
+
+                    .value {
+                        margin: 7px 0;
+                        font-size: 16px;
+                        font-weight: 600;
+                    }
+                }
+
+                .price:nth-child(5) {
+                    .value {
+                        font-size: 22px;
+                    }
+                }
+
+                .reward-point{
+                    text-align: end;
+                    font-size: 12px;
+
+                    span{
+                        color: cornflowerblue;
+                        font-weight: 700;
+                    }
+                }
+            }
+
+            .discount{
+                .coupon, .ontop{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    cursor: pointer;
+
+                    p{
+                        font-size: 17px;
+                        font-weight: 600;
+                    }
+                }
+
+                .coupon:hover, .ontop:hover{
+                    color: #4f5ba2;
+                }
+
+                .toggle{
+                    padding-bottom: 15px;
+                    border-bottom: 1px solid black;
+                    display: none;
+
+                    .apply{
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+
+                        p{
+                            margin: 13px 0;
+                            font-size: 15px;
+                        }
+
+                        button{
+                            padding: 7px 17px;
+                            font-size: 14px;
+                            font-weight: 600;
+                            background-color: white;
+                            border-radius: 5px;
+                        }
+                    }
+
+                    .use-point{
+                        h5{
+                            margin-bottom: 10px;
+                            font-weight: 600;
+                        }
+
+                        p{
+                            margin: 3px 0;
+                            font-size: 11px;
+                        }
+
+                        .form{
+                            display: flex;
+                            justify-content: space-between;
+                            gap: 10px;
+
+                            input[type='text']{
+                                flex: 1;
+                                padding: 0 10px;
+                                border: 1px solid #8f8f8f;
+                                border-radius: 5px;
+                            }
+
+                            button{
+                                padding: 7px 17px;
+                                font-size: 14px;
+                                font-weight: 600;
+                                background-color: white;
+                                border-radius: 5px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

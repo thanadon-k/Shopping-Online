@@ -37,7 +37,7 @@ function Home() {
         <ClipLoader color="#000000" size={50} />
       </div>}
       <ToastContainer />
-      <Navbar numOfCart={cart.length}/>
+      <Navbar cart={cart}/>
       <div className='ads'>
         <div className='left'>
           <img src={adsLeft} alt="Ads" />

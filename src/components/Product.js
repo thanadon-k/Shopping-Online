@@ -30,6 +30,7 @@ function Product({ product, onAddToCart }) {
     };
 
     const handleAddToCartClick = () => {
+        product['orderQuantity'] = quantity;
         onAddToCart(product); 
     };
 

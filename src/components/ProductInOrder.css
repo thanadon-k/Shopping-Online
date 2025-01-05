@@ -1,0 +1,102 @@
+.product-order {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #AEAEAE;
+
+    .info {
+        display: flex;
+
+        .image {
+            width: 145px;
+            height: 168px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            border: 1px solid #AEAEAE;
+            border-radius: 5px;
+
+            img {
+                width: 145px;
+                height: auto;
+            }
+        }
+
+        .text{
+            width: 350px;
+            margin: 0 20px;
+
+            p{
+                font-size: 11px;
+                font-weight: 400;
+            }
+
+            span{
+                color: #908F8F;
+            }
+
+            .title{
+                padding: 0;
+                font-size: 16px;
+                font-weight: 500;
+                border: none;
+            }
+
+            .description{
+                height: 75px;
+                line-height: 1.5;
+                overflow: hidden;
+            }
+        }
+    }
+
+    .quantity-price {
+        width: 395px;
+        height: 27px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .quantity {
+            width: 80px;
+            margin-right: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .add,
+            .sub {
+                width: 27px;
+                height: 27px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: #908F8F;
+                border-radius: 10px;
+                background-color: #E5E5E5;
+            }
+
+            .add:hover,
+            .sub:hover {
+                background-color: #d2d2d2;
+            }
+
+            .sub.disabled {
+                background-color: #AEAEAE;
+            }
+
+            p {
+                font-size: 13px;
+            }
+        }
+
+        .total,
+        .price {
+            width: 100px;
+            margin: 0;
+            font-size: 14px;
+            font-weight: 500;
+        }
+    }
+}

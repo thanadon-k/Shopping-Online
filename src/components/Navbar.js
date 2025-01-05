@@ -3,8 +3,9 @@ import logo from '../assets/icons/logo.png';
 import { SlMagnifier } from "react-icons/sl";
 import { SlBasketLoaded } from "react-icons/sl";
 import { SlUser } from "react-icons/sl";
+import { Link } from "react-router-dom";
 
-function Navbar( {numOfCart} ) {
+function Navbar( {cart} ) {
   return (
     <div className='navbar'>
         <div className='logo'>
@@ -16,10 +17,12 @@ function Navbar( {numOfCart} ) {
                 <p>Search</p>
                 <SlMagnifier size={20} style={{ strokeWidth: 20 }}/>
             </div>
-            <div className='cart'>
-                <SlBasketLoaded size={24} style={{ strokeWidth: 5 }}/>
-                {numOfCart > 0 && <p>{numOfCart}</p>}
-            </div>
+            <Link to="/placeorder" state={{ cart }}>
+                <div className='cart'>
+                    <SlBasketLoaded size={24} style={{ strokeWidth: 5 }}/>
+                    {cart?.length > 0 && <p>{cart.length}</p>}
+                </div>
+            </Link>
             <div className='profile'>
                 <SlUser color="white" size={24} style={{ strokeWidth: 5 }}/>
             </div>
