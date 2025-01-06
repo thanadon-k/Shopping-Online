@@ -6,6 +6,8 @@
 
     .info {
         display: flex;
+        justify-content: space-between;
+        flex: 1;
 
         .image {
             width: 145px;
@@ -24,7 +26,7 @@
         }
 
         .text{
-            width: 350px;
+            flex: 1;
             margin: 0 20px;
 
             p{
@@ -44,7 +46,7 @@
             }
 
             .description{
-                height: 75px;
+                height: 80px;
                 line-height: 1.5;
                 overflow: hidden;
             }

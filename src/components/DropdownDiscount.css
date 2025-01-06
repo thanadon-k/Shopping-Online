@@ -1,0 +1,15 @@
+.dropdown-discount{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+
+    p{
+        font-size: 17px;
+        font-weight: 600;
+    }
+}
+
+.dropdown-discount:hover{
+    color: #4f5ba2;
+}
