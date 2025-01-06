@@ -1,6 +1,6 @@
 .home{
-    margin-bottom: 50px;
-    padding: 20px 70px;
+    width: 1298px;
+    margin: 20px auto 70px auto;
 
     .ads{
         display: flex;

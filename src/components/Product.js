@@ -14,7 +14,7 @@ function Product({ product, onAddToCart }) {
 
     const handleClickOutside = (event) => {
         if (cardRef.current && !cardRef.current.contains(event.target)) {
-            setIsClicked(false); 
+            setIsClicked(false);
             setQuantity(1)
         }
     };
@@ -31,13 +31,13 @@ function Product({ product, onAddToCart }) {
 
     const handleAddToCartClick = () => {
         product['orderQuantity'] = quantity;
-        onAddToCart(product); 
+        onAddToCart(product);
     };
 
     useEffect(() => {
         document.addEventListener('click', handleClickOutside);
         return () => {
-            document.removeEventListener('click', handleClickOutside); 
+            document.removeEventListener('click', handleClickOutside);
         };
     }, []);
 
@@ -47,35 +47,35 @@ function Product({ product, onAddToCart }) {
                 className='image'
                 style={{
                     height: isClicked ? '90px' : '142px'
-                }}
-            >
-                <img 
-                    src={product.thumbnail} 
+                }}>
+                <img
+                    src={product.thumbnail}
                     alt={product.title}
                     style={{
-                        width: isClicked ? '120px' : '170px'
+                        width: isClicked ? '120px' : '140px'
                     }}
                 ></img>
             </div>
             <div className='detail'>
                 <p className='title'>{product.title}</p>
-                <p className='price'>${Math.floor(product.price) * quantity}</p>
-            </div>
-            <div 
-                className='quantity'
-                style={{
-                    display: isClicked ? 'flex' : 'none'
-                }}
-            >
-                <div 
-                    className={`sub ${quantity === 1 ? 'disabled' : ''}`}
-                    onClick={decreaseQuantity}
-                >
-                    <VscChromeMinimize size={13} style={{ strokeWidth: 1 }}/>
-                </div>
-                <p>{quantity}</p>
-                <div className='add' onClick={increaseQuantity}>
-                    <VscAdd size={13} style={{ strokeWidth: 1 }}/>
+                <div>
+                    <p className='price'>${Math.floor(product.price) * quantity}</p>
+                    <div
+                        className='quantity'
+                        style={{
+                            display: isClicked ? 'flex' : 'none'
+                        }}>
+                        <div
+                            className={`sub ${quantity === 1 ? 'disabled' : ''}`}
+                            onClick={decreaseQuantity}
+                        >
+                            <VscChromeMinimize size={13} style={{ strokeWidth: 1 }} />
+                        </div>
+                        <p>{quantity}</p>
+                        <div className='add' onClick={increaseQuantity}>
+                            <VscAdd size={13} style={{ strokeWidth: 1 }} />
+                        </div>
+                    </div>
                 </div>
             </div>
             <button

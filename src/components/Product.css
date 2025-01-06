@@ -1,21 +1,22 @@
 .product{
+    display: flex;
+    flex-direction: column;
     width: 170px;
     height: 220px;
     border: 1px solid #AEAEAE;
     border-radius: 5px;
     cursor: pointer;
-    position: relative;
 
     .image{
-        width: 170px;
-        height: 142px;
         display: flex;
         justify-content: center;
         align-items: center;
+        width: 170px;
+        height: 142px;
         overflow: hidden;
 
         img{
-            width: 170px;
+            width: 140px;
             height: auto; 
             filter: brightness(1) invert(0);
         }
@@ -29,51 +30,54 @@
             overflow: hidden;
         }
 
-        .price{
-            margin: 14px 10px;
-            font-size: 16px;
-            font-weight: 800;
-        }
-    }
-
-    .quantity{
-        width: 80px;
-        display: none;
-        justify-content: space-between;
-        align-items: center;
-        position: absolute;
-        top: 128px;
-        right: 10px;
-
-        .add, .sub{
-            width: 27px;
-            height: 27px;
+        >div{
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
-            color: #908F8F;
-            border-radius: 10px;
-            background-color: #E5E5E5;
-        }
+            padding: 0 10px;
 
-        .add:hover, .sub:hover{
-            background-color: #d2d2d2;
-        }
+            .price{
+                margin: 7px 0;
+                font-size: 16px;
+                font-weight: 800;
+            }
 
-        .sub.disabled {
-            background-color: #AEAEAE;
-        }
-
-        p{
-            font-size: 13px;
+            .quantity{
+                width: 80px;
+                display: none;
+                justify-content: space-between;
+                align-items: center;
+        
+                .add, .sub{
+                    width: 27px;
+                    height: 27px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    color: #908F8F;
+                    border-radius: 10px;
+                    background-color: #E5E5E5;
+                }
+        
+                .add:hover, .sub:hover{
+                    background-color: #d2d2d2;
+                }
+        
+                .sub.disabled {
+                    background-color: #AEAEAE;
+                }
+        
+                p{
+                    font-size: 13px;
+                }
+            }
         }
     }
 
     button{
         display: none;
-        width: 150px;
         height: 35px;
-        margin: 5px 10px;
+        margin: 10px 10px;
         color: white;
         background-color: black;
         font-size: 15px;

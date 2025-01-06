@@ -24,7 +24,7 @@ function PlaceOrder() {
     const [selectedMethod, setSelectedMethod] = useState(null);
 
     const subTotalPrice = cart.reduce((sum, product) => sum + Math.floor(product.price) * Math.floor(product.orderQuantity), 0);
-    const grandTotalPrice = Math.floor(subTotalPrice) - (selectedCoupon?.discount ?? 0) - (selectedOnTop?.discount ?? 0) - (selectedSeasonal?.discount ?? 0)
+    const grandTotalPrice = Math.floor(subTotalPrice) - (selectedCoupon?.discount ?? 0) - (selectedOnTop?.discount ?? 0) - (selectedSeasonal?.discount ?? 0) + (selectedShippng === 'standard' ? 2 : 10)
 
     //check button 
     const isAnySelectedCoupon = !!selectedCoupon;
@@ -223,7 +223,7 @@ function PlaceOrder() {
                         </div>
                         <div class="price">
                             <p class="label">Shipping fee:</p>
-                            <p class="value">$0</p>
+                            <p class="value">${selectedShippng === 'standard' ? 2 : 10}</p>
                         </div>
                         {selectedCoupon && <div class="price">
                             <p class="label">{selectedCoupon.title}</p>
