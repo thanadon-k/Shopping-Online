@@ -41,6 +41,26 @@
 
             .products {
                 margin-bottom: 10px;
+
+                .no-product{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    padding: 15px 0;
+
+                    img{
+                        width: 150px;
+                        height: auto;
+                        position: relative;
+                        left: 7px;
+                    }
+
+                    p{
+                        margin: 0;
+                        font-size: 15px;
+                        color: #828282;
+                    }
+                }
             }
 
             .addr-title {

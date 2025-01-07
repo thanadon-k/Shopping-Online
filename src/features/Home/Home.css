@@ -104,6 +104,13 @@
         display: flex;
         flex-wrap: wrap;
         gap: 15.5px;
+
+        .no-product{
+            flex: 1;
+            text-align: center;
+            color: #505458;
+            font-size: 16px;
+        }
     }
 
     .loader{

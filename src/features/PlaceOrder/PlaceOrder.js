@@ -7,6 +7,7 @@ import DiscountButton from '../../components/DiscountButton';
 import DropdownDiscount from '../../components/DropdownDiscount';
 import credit from '../../assets/images/creditcard.png';
 import paypal from '../../assets/images/paypal.png';
+import noproduct from '../../assets/images/noproduct.jpeg';
 
 function PlaceOrder() {
     const location = useLocation();
@@ -16,6 +17,7 @@ function PlaceOrder() {
     const [isOntop, setIsOntop] = useState(false);
     const [isSeasonal, setIsSeasonal] = useState(false);
     const [point, setPoint] = useState('');
+    const [shipping, setShipping] = useState(0);
 
     const [selectedCoupon, setSelectedCoupon] = useState(null);
     const [selectedOnTop, setSelectedOnTop] = useState(null);
@@ -24,7 +26,7 @@ function PlaceOrder() {
     const [selectedMethod, setSelectedMethod] = useState(null);
 
     const subTotalPrice = cart.reduce((sum, product) => sum + Math.floor(product.price) * Math.floor(product.orderQuantity), 0);
-    const grandTotalPrice = Math.floor(subTotalPrice) - (selectedCoupon?.discount ?? 0) - (selectedOnTop?.discount ?? 0) - (selectedSeasonal?.discount ?? 0) + (selectedShippng === 'standard' ? 2 : 10)
+    const grandTotalPrice = Math.floor(subTotalPrice) - (selectedCoupon?.discount ?? 0) - (selectedOnTop?.discount ?? 0) - (selectedSeasonal?.discount ?? 0) + (shipping)
 
     //check button 
     const isAnySelectedCoupon = !!selectedCoupon;
@@ -124,10 +126,17 @@ function PlaceOrder() {
 
 
     const handleSelectShippng = (shipping) => {
+        if (cart.length === 0) return;
+
+        if (shipping === 'standard') setShipping(3);
+        if (shipping === 'express') setShipping(10);
+
         setSelectedShippng(shipping);
     };
 
     const handleSelectMethod = (method) => {
+        if (cart.length === 0) return;
+
         setSelectedMethod(method);
     };
 
@@ -154,7 +163,10 @@ function PlaceOrder() {
                                 />
                             ))
                         ) : (
-                            <p>Loading products...</p>
+                            <div className='no-product'>
+                                <img src={noproduct} alt="No Product" />
+                                <p>No products in the cart.</p>
+                            </div>
                         )}
                     </div>
                     <div className='addr-title'>
@@ -223,7 +235,7 @@ function PlaceOrder() {
                         </div>
                         <div class="price">
                             <p class="label">Shipping fee:</p>
-                            <p class="value">${selectedShippng === 'standard' ? 2 : 10}</p>
+                            <p class="value">${shipping}</p>
                         </div>
                         {selectedCoupon && <div class="price">
                             <p class="label">{selectedCoupon.title}</p>
@@ -248,7 +260,7 @@ function PlaceOrder() {
                             title={'Coupon'}
                             state={isCoupon}
                             updateState={updateDiscountState}
-                            isDisable={false} />
+                            isDisable={cart.length === 0} />
                         <div
                             className='toggle'
                             style={{

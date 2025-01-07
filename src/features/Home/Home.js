@@ -67,7 +67,9 @@ function Home() {
             />
           ))
         ) : (
-          <p>Loading products...</p>
+          <p className='no-product'>
+            No products available.
+          </p>
         )}
       </div>
     </div>
