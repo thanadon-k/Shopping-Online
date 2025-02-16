@@ -259,8 +259,8 @@ function PlaceOrder() {
                         <DropdownDiscount
                             title={'Coupon'}
                             state={isCoupon}
-                            updateState={updateDiscountState}
-                            isDisable={cart.length === 0} />
+                            isDisable={cart.length === 0} 
+                            onClick={() => updateDiscountState('Coupon')}/>
                         <div
                             className='toggle'
                             style={{
@@ -281,8 +281,9 @@ function PlaceOrder() {
                         </div>
                         <DropdownDiscount
                             title={'On Top'}
-                            state={isOntop} updateState={updateDiscountState}
-                            isDisable={!selectedCoupon} />
+                            state={isOntop} 
+                            isDisable={!selectedCoupon} 
+                            onClick={() => updateDiscountState('On Top')}/>
                         <div
                             className='toggle'
                             style={{
@@ -322,8 +323,8 @@ function PlaceOrder() {
                         <DropdownDiscount
                             title={'Seasonal'}
                             state={isSeasonal}
-                            updateState={updateDiscountState}
-                            isDisable={!selectedOnTop} />
+                            isDisable={!selectedOnTop} 
+                            onClick={() => updateDiscountState('Seasonal')}/>
                         <div
                             className='toggle'
                             style={{
