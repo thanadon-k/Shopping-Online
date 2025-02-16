@@ -2,11 +2,12 @@ import './DropdownDiscount.css';
 import { VscChevronDown } from "react-icons/vsc";
 import { VscChevronUp } from "react-icons/vsc";
 
-function DropdownDiscount( {title, state, isDisable} ) {
+function DropdownDiscount( {title, state, onClick ,isDisable} ) {
 
     return (
         <div 
             className='dropdown-discount'
+            onClick={() => onClick(title)}
             style={{
                 borderBottom: state ? 'none' : '1px solid black',
                 pointerEvents: isDisable ? 'none' : 'auto',
